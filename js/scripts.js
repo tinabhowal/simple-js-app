@@ -73,18 +73,4 @@ else {
 
 
 
-<<<<<<< HEAD:JS/scripts.js
-=======
-for (let i = 0;
-    i < pokemonList.length; i++) {
-    if(pokemonList[i].height >= 7) {
-        document.write(pokemonList[i].name + " (height:  " + pokemonList[i].height + " m) - Wow, that is a big pokemon!" + "<br>")
-    }
-    else if (pokemonList[i].height >= 6 && pokemonList[i].height < 7){
-        document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + " m) - That is a medium pokemon." + "<br>")
-    }
-    else {
-        document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + " m) - That is a small pokemon." + "<br>")
-    }
-}
->>>>>>> 6150c4e92db06190ff6427a8d9a2ec8ad1805e74:js/scripts.js
+
