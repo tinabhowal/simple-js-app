@@ -1,28 +1,3 @@
-// alert("Hello World!");
-
-// let favoriteFood = "Paneer";
-// document.write(favoriteFood);
-
-// let pokemonList=[
-//     {name:"Caterpie", height:7, type: ["grass","water"] }, 
-//     {name:"Weedle", height:5, type: ["sweet","salty"] }, 
-//     {name:"Pidgeotto", height:6, type: ["grass","air"] } 
-// ]
-
-// for (let i = 0;
-//     i < pokemonList.length; i++) {
-//     if(pokemonList[i].height >= 7) {
-//         document.write(pokemonList[i].name + " (height:  " + pokemonList[i].height + " m) - Wow, that is a big pokemon!" + "<br>")
-//     }
-//     else if (pokemonList[i].height >= 6 && pokemonList[i].height < 7){
-//         document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + " m) - That is a medium pokemon." + "<br>")
-//     }
-//     else {
-//         document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + " m) - That is a small pokemon." + "<br>")
-//     }
-// }
-
-
 let pokemonRepository = (function () {
  
 let pokemonList =     
@@ -41,27 +16,40 @@ function getAll(){
 return pokemonList;
 }
 
+function addListItem(pokemon){
+    let pokemonUl = document.querySelector(".pokemon-list");
+    let listPokemon = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("button-class");
+    listPokemon.appendChild(button);
+    pokemonUl.appendChild(listPokemon);
+    button.addEventListener("click", function (pokemon) {
+        pokemonRepository.showDetails(pokemon);
+      });
+}
+
+function showDetails(pokemon){
+    console.log(pokemon);
+}
+
+
+
 return{
     add: add,
-    getAll: getAll
+    getAll: getAll,
+    addListItem: addListItem,
+    showDetails:showDetails
 };
 
 
 
 })();
 
-
+pokemonRepository.add({name:"Pikachu", height:7, type:["grass" , "water"]})
 
 pokemonRepository.getAll().forEach(function(pokemon){
-    if (pokemon.height >= 7) {
-        document.write(pokemon.name + " (height:  " + pokemon.height + " m) - Wow, that is a big pokemon!" + "<br>")
-}
-else if (pokemon.height >= 6 && pokemon.height < 7){
-    document.write(pokemon.name + " (height: " + pokemon.height + " m) - That is a medium pokemon." + "<br>")
-}
-else {
-    document.write(pokemon.name + " (height: " + pokemon.height + " m) - That is a small pokemon." + "<br>")
-}
+    pokemonRepository.addListItem(pokemon);
 })();
 
 
