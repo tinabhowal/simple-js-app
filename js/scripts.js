@@ -24,13 +24,13 @@ function addListItem(pokemon){
     button.classList.add("button-class");
     listPokemon.appendChild(button);
     pokemonUl.appendChild(listPokemon);
-    button.addEventListener("click", function (pokemon) {
-        pokemonRepository.showDetails(pokemon);
+    button.addEventListener("click", function () {
+        showDetails(pokemon);
       });
 }
 
 function showDetails(pokemon){
-    console.log(pokemon);
+    console.log(pokemon.name);
 }
 
 
@@ -50,7 +50,7 @@ pokemonRepository.add({name:"Pikachu", height:7, type:["grass" , "water"]})
 
 pokemonRepository.getAll().forEach(function(pokemon){
     pokemonRepository.addListItem(pokemon);
-})();
+});
 
 
 
