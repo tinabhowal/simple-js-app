@@ -158,7 +158,7 @@ let pokemonRepository = (function () {
     
     })();
     
-    // pokemonRepository.add({name:"Pikachu", height:7, type:["grass" , "water"]})
+    
     
     pokemonRepository.loadList().then(function ()
     {
