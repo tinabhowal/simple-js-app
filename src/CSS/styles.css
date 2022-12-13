@@ -8,6 +8,7 @@ body {
 .pokemon-header{
   background-color: cadetblue;
   padding:10px;
+  text-align: center;
 }
 
 .pokemons{
